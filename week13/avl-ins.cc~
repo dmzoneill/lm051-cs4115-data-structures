@@ -1,0 +1,84 @@
+/*
+ * map-ins.cc
+ *
+ *  Created on: 20 April 2010
+ *  Author: David ONeill 0813001
+ *  
+ *  
+ */
+
+#include <iostream>
+#include <stdlib.h>
+#include "avl.h"
+
+
+using std::cout;
+using std::endl;
+
+
+int main(int argc, char **argv)
+{       
+    AVL< short, short > occurrences;
+    AVL< short , short >::Iterator< short , short > iter (&occurrences);
+
+    short pair_key = 0;
+    short pair_val;
+    short cnt = 1;
+    int temp;
+
+    bool found = false;
+
+
+    //
+    // INSERT AND UPDATE
+    //
+    
+    while ( cnt < argc )
+    {
+        temp = atoi( argv[ cnt ] );
+         
+        if( cnt != 1 )
+            found = iter.Find( (short) temp , pair_val );
+        
+        if ( found == false )
+            occurrences.Insert( (short) temp , (short) 1 );
+        else
+            occurrences.Update( (short) temp , ++pair_val );
+    
+        cnt++;
+    }
+      
+|
+
+
+    //
+    // LIST
+    //
+
+    iter.GetFirst( pair_key , pair_val );
+    found = iter.GetFirst( pair_key , pair_val );
+
+    while ( found )
+    {
+        cout << pair_key << ": " << pair_val << "\n";
+        found = iter.GetNext( pair_key , pair_val );
+    }
+    
+    
+
+
+    //
+    // REMOVE
+    //
+
+    cnt = 1;
+    
+    while ( cnt < argc )
+    {
+        temp = atoi( argv[ cnt++ ] );
+        occurrences.Remove( (short) temp );
+    }
+
+
+    return 0;
+}
