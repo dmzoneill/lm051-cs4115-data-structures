@@ -1,0 +1,6 @@
+# Third-party AVL tree template by Meshula (http://meshula.artistnation.com, 2002, "free for use"),
+# extracted verbatim from week13/avltree.zip (AVL.h, avltest.cpp, avl.txt are byte-identical to the archive).
+week13/avltree/
+
+# Verbatim copy of avltest.cpp from the same Meshula AVL template archive (week13/avltree.zip).
+week13/avltest.cpp
