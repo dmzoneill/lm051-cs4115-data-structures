@@ -1,5 +1,9 @@
 # CS4115 Data Structures
 
+<p align="center">
+  <img src=".github/logo.png" alt="lm051-cs4115-data-structures logo" width="128" />
+</p>
+
 C++ work for the CS4115 Data Structures and Algorithm Analysis module,
 from the LM051 Computer Systems degree at the University of Limerick.
 
